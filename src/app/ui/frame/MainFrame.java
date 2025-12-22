@@ -3,7 +3,9 @@ package app.ui.frame;
 
 import app.model.User;
 import app.ui.panel.CartPanel;
+import app.ui.panel.OrderPanel;
 import app.ui.panel.ProductPanel;
+import app.ui.panel.ReportPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,8 +25,9 @@ public class MainFrame extends JFrame {
         tabs.addTab("Giỏ hàng", cartPanel);
 
         if ("ADMIN".equalsIgnoreCase(u.getRole())) {
-            tabs.addTab("Quản trị", new app.ui.panel.AdminPanel());
-            tabs.addTab("Báo cáo", new app.ui.panel.ReportPanel());
+            tabs.addTab("Quản trị sản phẩm", new app.ui.panel.AdminPanel());
+            tabs.addTab("Quản lý đơn", new OrderPanel());
+            tabs.addTab("Báo cáo", new ReportPanel());
         }
 
         add(tabs, BorderLayout.CENTER);
